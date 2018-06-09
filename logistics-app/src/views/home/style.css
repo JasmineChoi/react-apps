@@ -1,0 +1,29 @@
+.info-item {
+    background: #fff;
+    height: 170px;
+    font-size: 30px;/*px*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #999;
+}
+
+.info-item .l, .info-item .r {
+    display: flex;
+    align-items: center;
+}
+
+.info-item .l .circle {
+    height: 56px;
+    width: 56px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #00aaee;
+    color: #fff;
+}
+
+.info-item .r .arrow {
+    width: 20px;
+    height: 35px;
+
+}
