@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
+import './libs/flexible/flexible'
 
 import Home from './views/home';
 

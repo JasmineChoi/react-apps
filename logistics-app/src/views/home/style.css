@@ -6,6 +6,7 @@
     justify-content: space-between;
     align-items: center;
     color: #999;
+    margin-bottom: 20px;
 }
 
 .info-item .l, .info-item .r {
@@ -13,17 +14,33 @@
     align-items: center;
 }
 
-.info-item .l .circle {
+.info-item .l .circle, .info-item .l .circle-yellow {
     height: 56px;
     width: 56px;
+    line-height: 56px;
+    text-align: center;
     display: inline-block;
     border-radius: 100%;
     background: #00aaee;
     color: #fff;
+    margin: 0 24px;
+}
+.info-item .l .circle-yellow {
+    background: #ff9b00;
 }
 
 .info-item .r .arrow {
     width: 20px;
     height: 35px;
-
+    margin-right: 28px;
+}
+.info-item .r .line {
+    width: 2px;/*px*/
+    height: 150px;
+    background: #f2f2f2;
+}
+.info-item .r .gps {
+    width: 36px;
+    height: 47px;
+    margin: 0 40px;
 }
