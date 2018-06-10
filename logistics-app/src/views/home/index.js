@@ -2,7 +2,7 @@
  * Created by Jasmine on 2018/6/8.
  */
 import React, { Component } from 'react';
-import { Picker, List, Flex } from 'antd-mobile';
+import { Picker, List, Flex, Radio } from 'antd-mobile';
 
 import './style.css';
 
@@ -14,7 +14,7 @@ import Add from './assets/+.png';
 export default class Home extends Component {
     render() {
         return (
-            <div>
+            <div className="fs-30px">
                 <div className="info-item">
                     <div className="l">
                         <div className="circle">寄</div>
@@ -39,11 +39,11 @@ export default class Home extends Component {
                     </div>
                 </div>
 
-                <Picker className="mb-20px" data={[{value: "1", label: "中通"}, {value: "2", label: "顺丰"}]} cols={1}>
+                <Picker data={[{value: "1", label: "中通"}, {value: "2", label: "顺丰"}]} cols={1}>
                     <List.Item arrow="down" extra="中通">选择物流</List.Item>
                 </Picker>
 
-                <Flex>
+                <Flex className="bg-fff mt-20px">
                     <Flex.Item>
                         <p>物品类型</p>
                         <List.Item arrow="down" extra="请选择"></List.Item>
@@ -58,6 +58,39 @@ export default class Home extends Component {
                         </div>
                     </Flex.Item>
                 </Flex>
+                <Flex className="bg-fff">
+                    <Flex.Item>
+                        <p>物品类型</p>
+                        <List.Item arrow="down" extra="请选择"></List.Item>
+                        <div className="line"></div>
+                    </Flex.Item>
+                    <Flex.Item>
+                        <p>预估重量(KG)</p>
+                        <div className="flex">
+                            <img src={Minus} alt=""/>
+                            <input type="text"/>
+                            <img src={Add} alt=""/>
+                        </div>
+                    </Flex.Item>
+                </Flex>
+
+                <Flex className="bg-fff mt-20px">
+                    <Flex.Item>
+                        <span>上门取</span>
+                        <input type="radio"/>
+                    </Flex.Item>
+                    <Flex.Item>
+                        <span>自寄</span>
+                        <input type="radio"/>
+                    </Flex.Item>
+                </Flex>
+
+                <div className="footer">
+                    <div className="content">
+
+                    </div>
+                    <div className="btn">提交</div>
+                </div>
             </div>
         )
     }

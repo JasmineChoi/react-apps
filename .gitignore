@@ -1,0 +1,21 @@
+
+logistics-app/package-lock.json
+logistics-app/node_modules
+
+# testing
+logistics-app/coverage
+
+
+# misc
+logistics-app/.DS_Store
+logistics-app/.env.local
+logistics-app/.env.development.local
+logistics-app/.env.test.local
+logistics-app/.env.production.local
+
+logistics-app/npm-debug.log*
+logistics-app/yarn-debug.log*
+logistics-app/yarn-error.log*
+logistics-app/package-lock.json
+logistics-app/.idea
+logistics-app/build
