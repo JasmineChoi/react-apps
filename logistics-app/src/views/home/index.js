@@ -3,8 +3,9 @@
  */
 import React, { Component } from 'react';
 import { Picker, List, Flex, Radio } from 'antd-mobile';
+import SelectModal from './select-modal';
 
-import './style.css';
+import './index.css';
 
 import ArrowR from '../../assets/arrow-r.png';
 import Gps from './assets/gps.png';
@@ -43,42 +44,42 @@ export default class Home extends Component {
                     <List.Item arrow="down" extra="中通">选择物流</List.Item>
                 </Picker>
 
-                <Flex className="bg-fff mt-20px">
-                    <Flex.Item>
+                <Flex className="goods-item mt-20px">
+                    <Flex.Item className="line">
                         <p>物品类型</p>
                         <List.Item arrow="down" extra="请选择"></List.Item>
-                        <div className="line"></div>
                     </Flex.Item>
                     <Flex.Item>
                         <p>预估重量(KG)</p>
                         <div className="flex">
-                            <img src={Minus} alt=""/>
-                            <input type="text"/>
-                            <img src={Add} alt=""/>
+                            <img className="icon" src={Minus} alt=""/>
+                            <input type="text" value="1"/>
+                            <img className="icon" src={Add} alt=""/>
                         </div>
                     </Flex.Item>
                 </Flex>
-                <Flex className="bg-fff">
-                    <Flex.Item>
+                <Flex className="goods-item">
+                    <Flex.Item className="line">
                         <p>物品类型</p>
                         <List.Item arrow="down" extra="请选择"></List.Item>
-                        <div className="line"></div>
                     </Flex.Item>
+
                     <Flex.Item>
                         <p>预估重量(KG)</p>
                         <div className="flex">
-                            <img src={Minus} alt=""/>
-                            <input type="text"/>
-                            <img src={Add} alt=""/>
+                            <img className="icon" src={Minus} alt=""/>
+                            <input type="text" value="1"/>
+                            <img className="icon" src={Add} alt=""/>
                         </div>
                     </Flex.Item>
                 </Flex>
 
-                <Flex className="bg-fff mt-20px">
-                    <Flex.Item>
+                <Flex className="goods-item mt-20px">
+                    <Flex.Item className="line">
                         <span>上门取</span>
                         <input type="radio"/>
                     </Flex.Item>
+
                     <Flex.Item>
                         <span>自寄</span>
                         <input type="radio"/>
@@ -91,6 +92,8 @@ export default class Home extends Component {
                     </div>
                     <div className="btn">提交</div>
                 </div>
+
+                <SelectModal />
             </div>
         )
     }

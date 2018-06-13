@@ -34,7 +34,7 @@
     height: 35px;
     margin-right: 28px;
 }
-.info-item .r .line {
+.info-item .r .line, .goods-item .line::after {
     width: 2px;/*px*/
     height: 150px;
     background: #f2f2f2;
@@ -45,6 +45,25 @@
     margin: 0 40px;
 }
 
+.goods-item {
+    background: #fff;
+    padding: 30px 24px;
+}
+.goods-item .icon {
+    width: 55px;
+    height: 55px;
+}
+.goods-item input {
+    border: none;
+    flex: auto;
+    width: 117px;
+    text-align: center;
+}
+.goods-item .line::after {
+    content: "";
+    height: 100%;
+}
+
 .footer {
     position: fixed;
     bottom: 0;
@@ -53,7 +72,7 @@
     height: 140px;
     color: #fff;
 }
-.footer .content{
+.footer .content {
     background: #555;
     float: left;
     width: 550px;
@@ -65,3 +84,4 @@
     float: right;
     background: #bfbfbf;
 }
+

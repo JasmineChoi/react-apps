@@ -1,0 +1,24 @@
+.lh-70px {
+    line-height: 70px;
+}
+.modal-content {
+    padding: 0 26px;
+    font-size: 30px;/*px*/
+}
+.modal-content .btn {
+    border-radius: 30px;
+    border: 2px #999999 solid;/*px*/
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.foot-btn {
+    background: #3b96fa;
+    height: 90px;
+    line-height: 90px;
+    color: #fff;
+}
