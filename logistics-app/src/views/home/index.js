@@ -4,15 +4,19 @@
 import React, { Component } from 'react';
 import { Picker, List, Flex, Radio } from 'antd-mobile';
 import SelectModal from './select-modal';
-
+import { inject } from 'mobx-react';
 import './index.css';
-
 import ArrowR from '../../assets/arrow-r.png';
 import Gps from './assets/gps.png';
 import Minus from './assets/-.png';
 import Add from './assets/+.png';
 
-export default class Home extends Component {
+@inject('homeStore')
+class Home extends Component {
+    showModal = () => {
+        this.props.homeStore.selectVisible = true;
+    }
+
     render() {
         return (
             <div className="fs-30px">
@@ -45,7 +49,7 @@ export default class Home extends Component {
                 </Picker>
 
                 <Flex className="goods-item mt-20px">
-                    <Flex.Item className="line">
+                    <Flex.Item className="line" onClick={this.showModal}>
                         <p>物品类型</p>
                         <List.Item arrow="down" extra="请选择"></List.Item>
                     </Flex.Item>
@@ -53,13 +57,13 @@ export default class Home extends Component {
                         <p>预估重量(KG)</p>
                         <div className="flex">
                             <img className="icon" src={Minus} alt=""/>
-                            <input type="text" value="1"/>
+                            <input type="text" defaultValue="1"/>
                             <img className="icon" src={Add} alt=""/>
                         </div>
                     </Flex.Item>
                 </Flex>
                 <Flex className="goods-item">
-                    <Flex.Item className="line">
+                    <Flex.Item className="line" onClick={this.showModal}>
                         <p>物品类型</p>
                         <List.Item arrow="down" extra="请选择"></List.Item>
                     </Flex.Item>
@@ -68,7 +72,7 @@ export default class Home extends Component {
                         <p>预估重量(KG)</p>
                         <div className="flex">
                             <img className="icon" src={Minus} alt=""/>
-                            <input type="text" value="1"/>
+                            <input type="text" defaultValue="1"/>
                             <img className="icon" src={Add} alt=""/>
                         </div>
                     </Flex.Item>
@@ -98,3 +102,5 @@ export default class Home extends Component {
         )
     }
 }
+
+export default Home;
