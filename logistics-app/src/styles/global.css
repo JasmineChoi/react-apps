@@ -1,8 +1,34 @@
+/*reset start*/
 html, body {
     background: #f2f5f7;
 }
+p, h1, h2, h3, h4 {
+    margin: 0; padding: 0;
+}
+/*reset end*/
 
-.bg-fff { background: #fff; }
+.bg-fff {
+    background: #fff;
+}
 
 /*color*/
-.c-666 { color: #666666; }
+.c-fff {
+    color: #FFFFFF;
+}
+.c-666 {
+    color: #666666;
+}
+
+/* height */
+.h-80px {
+    height: 80px;
+}
+
+/* border */
+.b-b-999 {
+    border-bottom: 1px solid #999;
+}
+
+.b-b-e7 {
+    border-bottom: 1px solid #e7e7e7;
+}
