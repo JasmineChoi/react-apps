@@ -1,0 +1,9 @@
+/*component*/
+.footer-btn {
+    background: #3b96fa;
+    font-size: 30px;/*px*/
+    color: #fff;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+}

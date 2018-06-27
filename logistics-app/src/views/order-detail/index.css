@@ -1,0 +1,45 @@
+.w-80px {
+    width: 80px;
+}
+
+.banner {
+    height: 140px;
+    padding: 0 20px;
+    font-size: 20px;
+    color: #999999;
+}
+.banner .title {
+    font-size: 34px;/*px*/
+    color: #ff9515;
+    margin-bottom: 20px;
+}
+
+.status-axio {
+    padding: 50px 24px 0;
+}
+.status-axio .item {
+    display: flex;
+    color: #cbcbcb;
+    font-size: 30px;
+}
+.status-axio .item .content {
+    padding-bottom: 70px;
+}
+.status-axio .item .icon img {
+    width: 42px;
+    height: 42px;
+    margin-right: 20px;
+}
+.status-axio .item .icon:after {
+    display: block;
+    content: "";
+    width: 2px;
+    background: #cbcbcb;
+    height: 100%;
+    margin-left: 21px;
+    margin-top: -30px;
+    z-index: -1;
+}
+.status-axio .item.active {
+    color: #fe9714;
+}
