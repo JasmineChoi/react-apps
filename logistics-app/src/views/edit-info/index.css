@@ -1,0 +1,12 @@
+.edit-info .am-list-item.am-input-item,
+.edit-info .am-list-item.am-list-item-middle {
+    height: 110px;
+}
+
+.footer-wrap {
+    width: 100%;
+}
+
+.bottom-btn {
+    background-color: #3d96fa;
+}

@@ -2,17 +2,19 @@
  * Created by Jasmine on 2018/6/8.
  */
 import React, { Component } from 'react';
-import { Picker, List, Flex, Radio } from 'antd-mobile';
+import { Picker, List, Flex } from 'antd-mobile';
 import SelectModal from './select-modal';
 import { inject } from 'mobx-react';
+
 import './index.css';
+
 import ArrowR from '../../assets/arrow-r.png';
 import Gps from './assets/gps.png';
 import Minus from './assets/-.png';
 import Add from './assets/+.png';
 
 @inject('homeStore')
-class Home extends Component {
+export default class Home extends Component {
     showModal = () => {
         this.props.homeStore.selectVisible = true;
     }
@@ -102,5 +104,3 @@ class Home extends Component {
         )
     }
 }
-
-export default Home;
