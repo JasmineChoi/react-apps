@@ -19,3 +19,4 @@ logistics-app/yarn-error.log*
 logistics-app/package-lock.json
 logistics-app/.idea
 logistics-app/build
+logistics-app/yarn.lock
