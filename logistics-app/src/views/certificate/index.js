@@ -2,9 +2,42 @@
  * Created by Jasmine on 2018/6/18.
  */
 import React, { Component } from 'react';
-import { List, InputItem, Picker } from 'antd-mobile';
+import { List, InputItem, Picker, Button, Flex, Toast } from 'antd-mobile';
+import apis from '../../net/apis';
+import { request } from '../../net/net';
+import VerifyRules from '../../utils/verifyRules';
+import { trimAll } from '../../utils/util';
 
 export default class Certificate extends Component {
+    state = {
+        phone: ''
+    }
+
+    input = (value, name) => {
+        this.setState({
+            [name]: value
+        });
+    }
+
+    getCode = () => {
+        let phone = trimAll(this.state.phone);
+
+        if(!VerifyRules.phone.verify(phone)) {
+            Toast.info(VerifyRules.phone.tip);
+            return;
+        }
+
+        request({
+            url: apis.getVerifiCode,
+            method: 'POST',
+            data: {
+                phone: phone
+            }
+        }).then((res) => {
+
+        });
+    }
+
     render() {
         return (
             <div className="fs-30px">
@@ -16,22 +49,27 @@ export default class Certificate extends Component {
 
                 <List className="mt-20px">
                     <InputItem
-                        clear
+                        onChange={(v) => { this.input(v, "name"); }}
                         placeholder="请输入姓名"
                     >姓名</InputItem>
 
-                    <InputItem
-                        clear
-                        placeholder="请输入手机号"
-                    ></InputItem>
+                    <Flex justify="between">
+                        <InputItem
+                            className="flex-auto"
+                            onChange={(v) => { this.input(v, "phone"); }}
+                            placeholder="请输入手机号"
+                            type="phone"
+                        ></InputItem>
+                        <Button type="primary" className="h-60px lh-60px mr-40px" onClick={this.getCode}>获取验证码</Button>
+                    </Flex>
 
                     <InputItem
-                        clear
+                        onChange={(v) => { this.input(v); }}
                         placeholder="请输入验证码"
                     ></InputItem>
 
                     <InputItem
-                        clear
+                        onChange={(v) => { this.input(v); }}
                         placeholder="请输入证件号码"
                     >证件号码</InputItem>
 
@@ -42,7 +80,7 @@ export default class Certificate extends Component {
                     </Picker>
 
                     <InputItem
-                        clear
+                        onChange={(v) => { this.input }}
                         placeholder="请输入详细地址"
                     >详细地址</InputItem>
 

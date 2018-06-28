@@ -3,7 +3,10 @@
     background: #3b96fa;
     font-size: 30px;/*px*/
     color: #fff;
+    width: 100%;
     height: 90px;
     line-height: 90px;
     text-align: center;
+    position: fixed;
+    bottom: 0;
 }

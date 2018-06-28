@@ -8,12 +8,10 @@
     color: #999;
     margin-bottom: 20px;
 }
-
 .info-item .l, .info-item .r {
     display: flex;
     align-items: center;
 }
-
 .info-item .l .circle, .info-item .l .circle-yellow {
     height: 56px;
     width: 56px;
@@ -28,16 +26,9 @@
 .info-item .l .circle-yellow {
     background: #ff9b00;
 }
-
 .info-item .r .arrow {
     width: 20px;
     height: 35px;
-    margin-right: 28px;
-}
-.info-item .r .line, .goods-item .line::after {
-    width: 2px;/*px*/
-    height: 150px;
-    background: #f2f2f2;
 }
 .info-item .r .gps {
     width: 36px;
@@ -45,9 +36,27 @@
     margin: 0 40px;
 }
 
+.line::after, .line-50px::after, .line-150px::after {
+    content: "";
+    width: 2px;/*px*/
+    height: 100px;
+    background: #f2f2f2;
+    display: block;
+    margin-left: 24px;
+}
+.line-50px::after {
+    height: 50px;
+}
+.line-150px::after {
+    height: 150px;
+}
+
 .goods-item {
     background: #fff;
     padding: 30px 24px;
+}
+.goods-item:first-child {
+    border-bottom: 2px solid #e5e5e5;
 }
 .goods-item .icon {
     width: 55px;
@@ -58,10 +67,6 @@
     flex: auto;
     width: 117px;
     text-align: center;
-}
-.goods-item .line::after {
-    content: "";
-    height: 100%;
 }
 
 .footer {
@@ -75,13 +80,18 @@
 .footer .content {
     background: #555;
     float: left;
-    width: 550px;
+    width: 510px;
     height: 100%;
+    padding: 30px 20px;
+    font-size: 28px;/*px*/
 }
 .footer .btn {
     width: 200px;
     height: 100%;
     float: right;
     background: #bfbfbf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
