@@ -3,6 +3,8 @@
  */
 
 const apis = {
+    // 微信授权接口
+    wx: "",
 
     // 绑定手机号
     bindPhone: '/HUserInfo/bindPhone',

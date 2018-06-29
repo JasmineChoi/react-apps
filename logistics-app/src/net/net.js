@@ -11,8 +11,6 @@ const baseURLs = {
     dev: 'http://server.xldmclub.com',
 };
 
-//是否加载中
-let isLoading = false;
 function request(opt) {
     opt = Object.assign({
         method: 'GET',
@@ -54,8 +52,13 @@ function request(opt) {
     }
 
     if (opt.method.toUpperCase() === 'POST') {
-        opt.data = Object.assign({}, opt.data);
+        // 使用请求头Content-Type:application/x-www-form-urlencoded;提交post請求
+        let param = new URLSearchParams();
+        for(let k in opt.data) {
+            param.append(k, opt.data[k]);
+        }
 
+        opt.data = param;
     }
 
     if (opt.needLoading) {
