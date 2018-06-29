@@ -80,7 +80,7 @@ export default class Certificate extends Component {
                     </Picker>
 
                     <InputItem
-                        onChange={(v) => { this.input }}
+                        onChange={(v) => { this.input(v); }}
                         placeholder="请输入详细地址"
                     >详细地址</InputItem>
 

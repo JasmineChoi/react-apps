@@ -2,18 +2,24 @@
     line-height: 70px;
 }
 .modal-content {
-    padding: 0 26px;
+    padding-left: 26px;
     font-size: 30px;/*px*/
 }
 .modal-content .btn {
     border-radius: 30px;
     border: 2px #999999 solid;/*px*/
     height: 60px;
-    line-height: 60px;
-    width: 100%;
+    line-height: 54px;
+    flex: 0 0 210px;
     background: #fff;
     margin-bottom: 40px;
+    margin-right: 30px;
     color: #666;
+}
+.modal-content .btn.active {
+    background: #3b96fa;
+    color: #fff;
+    border: none;
 }
 
 .foot-btn {

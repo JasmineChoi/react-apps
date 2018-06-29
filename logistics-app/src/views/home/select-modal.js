@@ -14,29 +14,39 @@ export default class SelectModal extends Component {
         this.props.homeStore.selectVisible = false;
     }
 
+    // 选择物品
+    select = (i) => {
+        this.props.homeStore.selectType = i;
+    }
+
     render() {
+        let { selectType, goodsTypes, selectVisible } = this.props.homeStore;
+
         return (
             <div className="modal-wrap">
                 <Modal
                     popup
                     title={<div className="fs-34px c-666 lh-70px">选择物品类型</div>}
-                    visible={this.props.homeStore.selectVisible}
+                    visible={selectVisible}
                     onClose={this.onClose}
                     animationType="slide-up"
                 >
                     <div className="modal-content">
-                        <Flex>
-                            <Flex.Item><button className="btn">买入</button></Flex.Item>
-                            <Flex.Item><button className="btn">买入</button></Flex.Item>
-                            <Flex.Item><button className="btn">买入</button></Flex.Item>
-                        </Flex>
-                        <Flex>
-                            <Flex.Item><button className="btn">买入</button></Flex.Item>
-                            <Flex.Item><button className="btn">买入</button></Flex.Item>
-                            <Flex.Item><button className="btn">买入</button></Flex.Item>
+                        <Flex wrap="wrap">
+                            {
+                                goodsTypes.map((item, i) => {
+                                    return (
+                                        <button key={i}
+                                                className={"btn" + (selectType === i ? " active" : "")}
+                                                onClick={() => { this.select(i) }}>
+                                            {item}
+                                        </button>
+                                    )
+                                })
+                            }
                         </Flex>
                     </div>
-                    <div className="foot-btn" onClick={this.onClose}>买入</div>
+                    <div className="foot-btn" onClick={this.onClose}>确认</div>
                 </Modal>
             </div>
         )

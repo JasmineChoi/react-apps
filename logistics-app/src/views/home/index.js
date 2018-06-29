@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import { Picker, List, Flex, Checkbox } from 'antd-mobile';
 import SelectModal from './select-modal';
-import { inject } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
 
 import './index.css';
 
@@ -14,6 +14,7 @@ import Minus from './assets/-.png';
 import Add from './assets/+.png';
 
 @inject('homeStore')
+@observer
 export default class Home extends Component {
     showModal = () => {
         this.props.homeStore.selectVisible = true;
@@ -24,6 +25,8 @@ export default class Home extends Component {
     }
 
     render() {
+        let { selectType, goodsTypes } = this.props.homeStore;
+
         return (
             <div className="fs-30px">
                 <div className="info-item">
@@ -58,7 +61,7 @@ export default class Home extends Component {
                     <Flex className="goods-item mt-20px">
                         <Flex.Item onClick={this.showModal}>
                             <p>物品类型</p>
-                            <List.Item arrow="down" extra="请选择"></List.Item>
+                            <List.Item arrow="down">{goodsTypes[selectType] || "请选择"}</List.Item>
                         </Flex.Item>
                         <div className="line"></div>
 
@@ -66,7 +69,7 @@ export default class Home extends Component {
                             <p>预估重量(KG)</p>
                             <div className="flex mt-20px">
                                 <img className="icon" src={Minus} alt=""/>
-                                <input type="text" defaultValue="1"/>
+                                <input type="number" defaultValue="1"/>
                                 <img className="icon" src={Add} alt=""/>
                             </div>
                         </Flex.Item>
@@ -74,8 +77,8 @@ export default class Home extends Component {
 
                     <Flex className="goods-item">
                         <Flex.Item onClick={this.showModal}>
-                            <p>物品类型</p>
-                            <List.Item arrow="down" extra="请选择"></List.Item>
+                            <p>代收金额</p>
+                            <List.Item arrow="down">0元</List.Item>
                         </Flex.Item>
                         <div className="line"></div>
 
@@ -83,7 +86,7 @@ export default class Home extends Component {
                             <p>预估重量(KG)</p>
                             <div className="flex mt-20px">
                                 <img className="icon" src={Minus} alt=""/>
-                                <input type="text" defaultValue="1"/>
+                                <input type="number" defaultValue="1"/>
                                 <img className="icon" src={Add} alt=""/>
                             </div>
                         </Flex.Item>
